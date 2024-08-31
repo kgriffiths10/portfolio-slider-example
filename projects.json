@@ -1,0 +1,44 @@
+[
+    {
+        "title": "MONOPOLY BANKER PROJECT",
+        "featuredTech": ["REACTJS", "JAVASCRIPT", "NODEJS"],
+        "description": "The Monopoly Banker Project is a digital version of the traditional board game, focusing on managing transactions efficiently and accurately. It automates the banking process, allowing players to focus more on strategy and gameplay. The project showcases advanced ReactJS techniques for handling dynamic data and smooth user interactions.",
+        "link": "#"
+    },
+    {
+        "title": "PIXELATED REVEAL MENU",
+        "featuredTech": ["HTML", "CSS", "JAVASCRIPT"],
+        "description": "A stylish pixelated reveal menu for websites, built with pure CSS and JavaScript to create an engaging user experience. The menu reveals content with a pixelated transition effect, adding a modern touch to web navigation. This project highlights the creative use of CSS animations and transitions in web design.",
+        "link": "#"
+    },
+    {
+        "title": "SMART HOME ENERGY MONITOR",
+        "featuredTech": ["REACTJS", "JAVASCRIPT", "NODEJS"],
+        "description": "An IoT-based solution that helps homeowners efficiently track and manage their energy consumption in real time. The project integrates with various smart devices to monitor usage and provides insights through an intuitive dashboard. It emphasizes the use of ReactJS for responsive interfaces and NodeJS for handling real-time data processing.",
+        "link": "#"
+    },
+    {
+        "title": "RESPONSIVE PORTFOLIO WEBSITE",
+        "featuredTech": ["HTML", "CSS", "JAVASCRIPT"],
+        "description": "A responsive portfolio website designed to showcase web design and development projects, optimized for viewing on all devices. The website features a clean layout with smooth transitions and interactive elements. This project demonstrates proficiency in creating mobile-first designs and implementing responsive design techniques.",
+        "link": "#"
+    },
+    {
+        "title": "CRYPTO TRADING BOT",
+        "featuredTech": ["PYTHON", "KRAKEN API", "PANDAS"],
+        "description": "A trading bot that automates cryptocurrency transactions, making decisions based on market data and analytics. The bot integrates with the Kraken API to execute trades and uses Python's Pandas library for data analysis. This project illustrates the application of algorithmic trading and real-time data processing in financial technology.",
+        "link": "#"
+    },
+    {
+        "title": "E-COMMERCE WEBSITE",
+        "featuredTech": ["REACTJS", "NODEJS", "MONGODB"],
+        "description": "A full-stack e-commerce website featuring product listings, a shopping cart, and secure payment processing. The project focuses on creating a seamless shopping experience with a user-friendly interface and robust backend. It showcases the use of ReactJS for dynamic front-end development and NodeJS with MongoDB for efficient data management.",
+        "link": "#"
+    },
+    {
+        "title": "WEATHER APP",
+        "featuredTech": ["REACTJS", "API INTEGRATION", "JAVASCRIPT"],
+        "description": "A weather app providing real-time weather updates and forecasts for multiple cities, built with ReactJS. The app integrates with a weather API to display accurate and up-to-date information, including temperature, humidity, and wind speed. It demonstrates the integration of external APIs and the creation of dynamic user interfaces with ReactJS.",
+        "link": "#"
+    }
+]

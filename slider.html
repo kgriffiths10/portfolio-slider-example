@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlickJS Synced Sliders</title>
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Saira Semi Condensed', sans-serif;
+            font-weight: 800;
+            background-color: #0D2111;
+        }
+        
+        .global-padding {
+            padding: 5%;
+        }
+
+        section {
+            height: 100vh;
+        }
+
+        h1 {
+            line-height: 80%;
+            color: white;
+            font-size: 10rem;
+            font-weight: 800;
+            margin: 0 0 4rem;
+        }
+
+        .main-slider, .thumbnail-slider {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .thumbnail-slider .slick-list {
+            overflow: visible;
+        }
+
+        .thumbnail-slider .slick-slide {
+            background-color: transparent;
+            border: 1px solid #417C2D;
+            color: #417C2D;
+            cursor: pointer;
+            transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            margin-right: 2rem;
+            text-align: center;
+            padding: 0.625rem 3.125rem;
+            font-size: 1.5rem;
+        }
+
+        .thumbnail-slider .slick-slide:hover {
+            color: #285818;
+            border-color: #285818;
+        }
+
+        .thumbnail-slider .slick-current {
+            background-color: #77D84B;
+            color: #0D2111;
+        }
+
+        .slick-dots {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .slick-dots li {
+            width: 0;
+        }
+
+        .slick-dots li button:before {
+            color: #77D84B;
+        }
+
+        .slick-dots li.slick-active button:before {
+            color: #77D84B;
+        }
+
+        .featured-tech-title {
+            font-family: 'JetBrains Mono', sans-serif;
+            font-weight: 200;
+            color: white;
+        }
+
+        article {
+            margin: 1.5rem 0;
+        }
+
+        .featured-tech-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem;
+            display: flex;
+            gap: 2rem;
+            font-weight: 700;
+        }
+
+        .featured-tech-list li {
+            font-size: 1rem;
+            color: white;
+        }
+
+        .description {
+            font-family: 'JetBrains Mono', sans-serif;
+            font-weight: 200;
+            color: white;
+            width: 75%;
+            margin: 0 0 1.5rem;
+        }
+
+        .project-link {
+            font-size: 1rem;
+            color: white;
+            padding: 0.5rem 1.25rem;
+            background-color: #417C2D;
+            font-family: 'JetBrains Mono', sans-serif;
+            font-weight: 200;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .project-link:hover {
+            background-color: #285818;
+        }
+    </style>
+</head>
+<body>
+    <section class="global-padding">
+        <h1>DEVELOPMENT<br>PROJECTS</h1>
+        <div class="thumbnail-slider"></div>
+        <div class="main-slider"></div>
+    </section>
+
+    <!-- Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.getJSON('projects.json', function(data) {
+                const $mainSlider = $('.main-slider');
+                const $thumbnailSlider = $('.thumbnail-slider');
+                
+                // Populate sliders with data
+                data.forEach(function(project) {
+                    $thumbnailSlider.append(`<div>${project.title}</div>`);
+                    $mainSlider.append(`
+                        <div>
+                            <article>
+                                <div class="featured-tech-title">Featured Tech</div>
+                                <ul class="featured-tech-list">
+                                    ${project.featuredTech.map(tech => `<li>${tech}</li>`).join('')}
+                                </ul>
+                                <div class="description">${project.description}</div>
+                                <a class="project-link" href="${project.link}">View Code</a>
+                            </article>
+                        </div>
+                    `);
+                });
+    
+                // Initialize the sliders
+                $mainSlider.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    fade: true,
+                    asNavFor: '.thumbnail-slider',
+                    dots: true
+                });
+    
+                $thumbnailSlider.slick({
+                    slidesToScroll: 1,
+                    asNavFor: '.main-slider',
+                    focusOnSelect: true,
+                    centerMode: false,
+                    centerPadding: '0',
+                    arrows: false,
+                    dots: false,
+                    variableWidth: true
+                });
+            });
+        });
+    </script>
+</body>
+</html>
